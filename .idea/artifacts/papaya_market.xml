@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="papaya_market">
+    <output-path>$PROJECT_DIR$/out/artifacts/papaya_market</output-path>
+    <root id="archive" name="papaya_market.jar" />
+  </artifact>
+</component>

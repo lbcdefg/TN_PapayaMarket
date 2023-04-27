@@ -1,0 +1,4 @@
+url = 192.168.0.124:1521
+path = \\\\192.168.0.143\\학생들의공간\\TN_PAPAYA\\
+id = tn_papaya
+pass = java1234

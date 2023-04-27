@@ -1,0 +1,37 @@
+@sql
+   쿼리문을 만들때는 예약어는 소문자, 짓는 이름들은 다 대문자
+-# 
+   GUI
+	init은 왠만하면 쓰지말고 constructor()로 쓰기_init이 변수위치에 따라 에러나요
+
+	gui는 겹치는 메소드 이름이 많음으로 메소드 이름앞에 클래스 이름 이니셜로
+	변수이름  jiIdCheckB -> 아이디확인버튼 클래스이름(이니셜), 해당되는위치, 기능, 유형
+
+
+   들여쓰기 생활화(띄어쓰기 4번이 아닌 탭(공백)) 메소드 위에는 메소드 설명 적어놓기
+   변수이름은 소문자로 시작해서 _쓰지않고 대문자로 단어구분
+   변수이름은 길더라도 의미부여하고 명사로 짓기
+   메소드 이름은 길더라도 동사로 이름 짓기
+   클래스 이름은 대문자로 시작하고
+   
+쿼리 자바 코틀린 모든것을 개발할때 데이터에 맞게 유동적으로 코드짜기 
+ex)   String data1 = rs.getString(1);
+   String data2 = rs.getString(2);
+   String data3 = rs.getString(3);
+
+   ---위에는 컬럼 세개만 불러와서 하드 코딩으로 3개에 맞춰서 불러옴
+      컬럼수가 달라지면 유동적으로 변하지 않아서 널포인트 익셉션이 날수도 있음
+
+   while (rs.next()) {
+      ResultSetMetaData rsmd = rs.getMetaData();
+      int numberOfColumns = rsmd.getColumnCount();
+      Vector<Object> temp = new Vector<Object>();
+      for (int i = 1; i <= numberOfColumns; i++) {
+         String data = rs.getString(i);
+         temp.add(data);
+      }
+      rowData.add(temp);
+   }
+   --컬럼의 카운트를 불러와서 컬럼 카운트에 맞게 데이터를 불러옴
+      컬럼 갯수와 상관없이 모두 돌아감
+위에 차이점 보고 이렇게 개발할수있도록 해주셨으면 좋겟습니다. 하드코딩 들키면 혼난다아..
